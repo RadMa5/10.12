@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee{
     private String firstName;
     private String lastName;
@@ -56,6 +58,10 @@ public class Employee{
         Employee object = (Employee) obj;
         String fn = new String(firstName + " " + lastName);
         return fn.equals(object.getFullName());
+    }
 
+    @Override
+    public int hashCode(){
+        return Objects.hash(firstName, lastName, age);
     }
 }
